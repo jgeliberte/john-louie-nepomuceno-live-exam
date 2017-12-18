@@ -7,19 +7,22 @@ function printFibonacci($n)
   $first = 0;
   $second = 1;
  
-  echo "Fibonacci Series \n";
- 
-  echo $first.' '.$second.' ';
- 
-  for($i = 2; $i < $n; $i++){
- 
-    $third = $first + $second;
- 
-    echo $third.' ';
- 
-    $first = $second;
-    $second = $third;
- 
+    if($n > 1 && $n <= 50){
+      echo $first.', '.$second;
+      for($i = 2; $i < $n; $i++){
+
+        $third = $first + $second;
+
+        echo ', '.$third;
+
+        $first = $second;
+        $second = $third;
+      }
+    
+    }else if($n == 1){
+      echo $first;
+    }else{
+      echo "Please enter numbers 1 - 50 only";
     }
 }
 
