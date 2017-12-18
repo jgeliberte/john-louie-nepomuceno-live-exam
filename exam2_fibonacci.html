@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+	<title>Fibonacci Live Exam</title>
+    
+    <!-- STYLE SHEETS -->
+	<link href="assets/css/style.css" rel="stylesheet">
+	<link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="assets/css/dygraph.css" rel="stylesheet">
+    
+    <style>
+        .jumbotron{
+            background-color: #292E37;
+        }
+        .whiteFont{
+            color: white;
+        }
+        .gmFont{
+            color: #292E37;
+        }
+    </style>
+    
+    <!-- BOOTSTRAP SCRIPTS -->
+	<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    
+    <!-- AJAX SCRIPTS -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        
+    <!-- Custom Scripts -->
+    <!-- <script src="assets/js/generateFibo.js"></script> -->
+    
+    <script>
+    $(document).ready(function(){
+        $("button").click(function(){
+            $.post("genFibonnaci.php",
+            {
+              number: $("#number").val()
+            },
+            function(data,status){
+                alert("Data: " + data + "\nStatus: " + status);
+            });
+        });
+    });
+    </script>    
+    
+</head>
+<body>
+    <div class="jumbotron text-center">
+      <span class="whiteFont"><h1>Fibonacci Series - Live Exam</h1>
+      <p>Phivolcs Dynaslope Project</p></span> 
+    </div>
+	<div class="container">
+		<div class="panel panel-default">
+            <div class="panel-heading">What is Fibonacci Series?</div>
+            <div class="panel-body">
+                
+			</div>
+		</div>
+        <div class="panel panel-default">
+            <div class="panel-heading">Enter sample data</div>
+            <div class="panel-body">
+                <form>
+                    Number of Fibonacci Series:<br>
+                    <input id="number" type="number" name="value" min="1" max="50" style="width: 300px"><br>
+                    <button id="genFiboBtn">Generate</button>
+                    <h4>Fibo Output: <br> <span id="result"></span></h4>
+                </form>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
