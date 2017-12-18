@@ -26,23 +26,12 @@
     
     <!-- AJAX SCRIPTS -->
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
         
     <!-- Custom Scripts -->
     <!-- <script src="assets/js/generateFibo.js"></script> -->
     
-    <script>
-    $(document).ready(function(){
-        $("button").click(function(){
-            $.post("genFibonnaci.php",
-            {
-              number: $("#number").val()
-            },
-            function(data,status){
-                alert("Data: " + data + "\nStatus: " + status);
-            });
-        });
-    });
-    </script>    
+   
     
 </head>
 <body>
@@ -60,15 +49,25 @@
         <div class="panel panel-default">
             <div class="panel-heading">Enter sample data</div>
             <div class="panel-body">
-                <form>
                     Number of Fibonacci Series:<br>
-                    <input id="number" type="number" name="value" min="1" max="50" style="width: 300px"><br>
-                    <button id="genFiboBtn">Generate</button>
-                    <h4>Fibo Output: <br> <span id="result"></span></h4>
-                </form>
+                    <input type="number" id="text1" min="1" max="50" style="width: 500px">
+                    <button id="button">Generate</button>
+                    <div id="result"></div>
 			</div>
 		</div>
 	</div>
-
+    <script>   
+        $('#button').click(function() {
+            var number = $('#text1').val();
+            $.ajax({
+                type: 'POST',
+                url: 'process.php',
+                data: { text1: number },
+                success: function(response) {
+                    $('#result').html(response);
+                }
+            });
+        });
+    </script> 
 </body>
 </html>
