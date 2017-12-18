@@ -6,7 +6,7 @@
         var eq = function(x) { return [Math.sqrt(1-Math.pow(Math.abs(x)-1,2)), Math.acos(1-Math.abs(x))-Math.PI]; };
         eval("fn = " + eq);
 
-        var graph = document.getElementById("graph_div");
+        var graph = document.getElementById("graph_div2");
         var width = parseInt(graph.style.width, 10);
         var x1 = parseFloat(-10);
         var x2 = parseFloat(10);

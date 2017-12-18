@@ -29,9 +29,12 @@
 	<script src="//cdnjs.cloudflare.com/ajax/libs/dygraph/1.1.1/dygraph-combined.js" type="text/javascript"></script>
 	<script src="assets/js/dygraph.js">	</script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/dygraph/2.0.0/dygraph.min.js"></script>
-    
+    <script src="http://www.google.com/jsapi?ext.js">
+	</script>
     <!-- Custom Scripts -->
 	<script src="assets/js/shapePlotter.js"></script>
+    <script src="assets/js/bellcurve.js"></script>
+
     
 </head>
 <body>
@@ -43,7 +46,7 @@
 		<div class="panel panel-default">
             <div class="panel-heading">Cardioid Function in DyGraphs</div>
             <div class="panel-body">
-
+                <div id="graph_div1" style="width:600px; height:300px;"></div>
 			</div>
 		</div>
 		<div class="panel panel-default">
@@ -51,13 +54,13 @@
             <div class="panel-body">
                 <p id="plot"><b>Equation: </b><br>
 
-                <div id="graph_div" style="width:600px; height:300px;"></div>
+                <div id="graph_div2" style="width:600px; height:300px;"></div>
 			</div>
 		</div>
 		<div class="panel panel-default">
             <div class="panel-heading">Bell Curve in Dygraphs</div>
-            <div class="panel-body">
-                
+            <div class="panel-body chart">
+                <div id="chart_div"></div>
 			</div>
 		</div>
 	</div>
