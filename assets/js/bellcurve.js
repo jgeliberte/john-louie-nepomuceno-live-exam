@@ -9,10 +9,10 @@ function drawChart() {
     }
     var chartData = new Array([]);
     var index = 0;
-    for (var i = -3; i < 3.1; i += 0.1) {
+    for (var i = 0; i < 100; i += 0.1) {
         chartData[index] = new Array(2);
         chartData[index][0] = i;
-        chartData[index][1] = NormalDensityZx(i, 0, 1);
+        chartData[index][1] = NormalDensityZx(i, 70, 4);
         index++;
     }
     data.addRows(chartData);
